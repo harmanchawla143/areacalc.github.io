@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Space Calculation</title>
+	        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="/images/h.png" type="image/x-icon">
+</head>
+<body>
+
+<div class="tabs">
+  <input type="radio" name="tabs" id="tabone" checked="checked">
+  <label for="tabone">QUICK ESTIMATOR</label>
+  <div class="tab">
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+               <div class="space-item">
+                   <img src="./Images/bedup.png" alt="" class="space-item-image">
+                   <h3>Bed - Double</h3>
+                   <div class="count-bar">
+                    <span class="space-item-price">0.72</span>
+                       <button class="sub" id="sub-count"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add" id="add-count"><i class="fas fa-plus"></i></button>
+                   </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+                <div class="space-item">
+                    <img src="./Images/book-caseup.png" alt="" class="space-item-image">
+                    <h3>Book Shelf</h3>
+                    <div class="count-bar">
+                        <span class="space-item-price">0.50</span>
+                        <button class="sub"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+                <div class="space-item">
+                    <img src="./Images/arm-chairup.png" alt="" class="space-item-image">
+                    <h3>Arm Chair</h3>
+                    <div class="count-bar">
+                        <span class="space-item-price">0.48</span>
+                        <button class="sub"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0"  disabled>
+                       <button class="add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+                <div class="space-item">
+                    <img src="./Images/bike-1up.png" alt="" class="space-item-image">
+                    <h3>Bike</h3>
+                    <div class="count-bar">
+                        <span class="space-item-price">0.40</span>
+                        <button class="sub"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+               <div class="space-item">
+                   <img src="./Images/archiveup.png" alt="" class="space-item-image">
+                   <h3>Filling Cabinet</h3>
+                   <div class="count-bar">
+                    <span class="space-item-price">0.60</span>
+                       <button class="sub" id="sub-count"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add" id="add-count"><i class="fas fa-plus"></i></button>
+                   </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+                <div class="space-item">
+                    <img src="./Images/Flat-TVup.png" alt="" class="space-item-image">
+                    <h3>TV</h3>
+                    <div class="count-bar">
+                        <span class="space-item-price">0.40</span>
+                        <button class="sub"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+                <div class="space-item">
+                    <img src="./Images/fridge-1up.png" alt="" class="space-item-image">
+                    <h3>Fridge</h3>
+                    <div class="count-bar">
+                        <span class="space-item-price">1.00</span>
+                        <button class="sub"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 col-md-4 px-2">
+                <div class="space-item">
+                    <img src="./Images/tableup.png" alt="" class="space-item-image">
+                    <h3>Dining Table</h3>
+                    <div class="count-bar">
+                        <span class="space-item-price">1.00</span>
+                        <button class="sub"><i class="fas fa-minus"></i></button>
+                       <input type="number" class="quantity-input" value="0" disabled>
+                       <button class="add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="final-total">
+            <div class="units">
+                <h3>Total Space Required is : <span class="total-price">0m<sup>3</sup></span></h3>
+                    <h4>Recommended Storage Unit : <span class="recc"></span></h4>
+            </div>
+            <div class="nothing">
+                <h3>No Storage Selected</h3>
+            </div>
+
+        </div>
+  </div>
+  
+  <input type="radio" name="tabs" id="tabtwo">
+  <label for="tabtwo">DETAILED ESTIMATOR</label>
+  <div class="tab">
+           <div class="wrapper center-block">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading active" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Select Items
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul>
+                                    <div class="shop-item">
+                                      <li class="item">
+                                          <div class="inner-item">
+                                              <h4 class="shop-item-title">Bed - Double</h4>
+                                              <span class="shop-item-price" style="display: none;">0.72</span>
+                                              <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                          </div>
+                                      </li>
+                                    </div>
+                                    <div class="shop-item">
+                                      <li class="item">
+                                          <div class="inner-item">
+                                              <h4 class="shop-item-title">Book Shelf</h4>
+                                              <span class="shop-item-price" style="display: none;">0.50</span>
+                                              <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                          </div>
+                                      </li>
+                                    </div>
+                                    <div class="shop-item">
+                                      <li class="item">
+                                          <div class="inner-item">
+                                              <h4 class="shop-item-title">Arm Chair</h4>
+                                              <span class="shop-item-price" style="display: none;">0.48</span>
+                                              <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                          </div>
+                                      </li>
+                                    </div>
+                                    <div class="shop-item">
+                                      <li class="item">
+                                          <div class="inner-item">
+                                              <h4 class="shop-item-title">Bike</h4>
+                                              <span class="shop-item-price" style="display: none;">0.40</span>
+                                              <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                          </div>
+                                      </li>
+                                    </div>
+                                    <div class="shop-item">
+                                        <li class="item">
+                                            <div class="inner-item">
+                                                <h4 class="shop-item-title">Filling Cabinet</h4>
+                                                <span class="shop-item-price" style="display: none;">0.60</span>
+                                                <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                        </li>
+                                      </div>
+                                      <div class="shop-item">
+                                        <li class="item">
+                                            <div class="inner-item">
+                                                <h4 class="shop-item-title">TV</h4>
+                                                <span class="shop-item-price" style="display: none;">0.40</span>
+                                                <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                        </li>
+                                      </div>
+                                      <div class="shop-item">
+                                        <li class="item">
+                                            <div class="inner-item">
+                                                <h4 class="shop-item-title">Fridge</h4>
+                                                <span class="shop-item-price" style="display: none;">1.00</span>
+                                                <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                        </li>
+                                      </div>
+                                      <div class="shop-item">
+                                        <li class="item">
+                                            <div class="inner-item">
+                                                <h4 class="shop-item-title">Dining Table</h4>
+                                                <span class="shop-item-price" style="display: none;">1.00</span>
+                                                <button class="btn shop-item-button" type="button"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                        </li>
+                                      </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <section class="content-section">
+            <h3 class="section-header">Selected Items</h3>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column"><strong>ITEM</strong></span>
+                <span class="cart-price cart-header cart-column"><strong>VOLUME</strong></span>
+                <div class="cart-quantity cart-header cart-column"><strong>QUANTITY</strong></div>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="total-price">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">0m<sup>3</sup></span>
+            </div>
+        </section>
+     </div>
+  </div>
+</div>
+<script>
+    
+   $('.panel-collapse').on('show.bs.collapse', function () {
+    $(this).siblings('.panel-heading').addClass('active');
+  });
+
+  $('.panel-collapse').on('hide.bs.collapse', function () {
+    $(this).siblings('.panel-heading').removeClass('active');
+  });
+        var quantityInputss = document.getElementsByClassName('quantity-input')
+        for (var i = 0; i < quantityInputss.length; i++) {
+            var input = quantityInputss[i]
+            input.addEventListener('change', quantityChangedO)
+        }
+        function quantityChangedO(event) {
+        var input = event.target
+        if (isNaN(input.value) || input.value < 0) {
+            input.value = 0
+        }
+        
+    }
+ var incre = document.getElementsByClassName('add');
+var decre = document.getElementsByClassName('sub');
+
+
+
+for(var i = 0; i < incre.length; i++){
+    var button = incre[i];
+    button.addEventListener('click',function(event){
+        var buttonClick = event.target;
+        var inpt = buttonClick.parentElement.parentElement.children[2];
+        var inputVal = inpt.value;
+        var newVal = parseInt(inputVal) + 1;
+        inpt.value = newVal;
+        updateCartTotals()
+
+    })
+}
+for(var i = 0; i < decre.length; i++){
+    var button = decre[i];
+    button.addEventListener('click',function(event){
+        var buttonClick = event.target;
+        var inpt = buttonClick.parentElement.parentElement.children[2];
+        var inputVal = inpt.value;
+        var newVal = parseInt(inputVal) - 1;
+        if(newVal >= 0){
+        inpt.value = newVal;}
+        else{
+
+        }
+        updateCartTotals()
+
+    })
+}
+    function updateCartTotals() {
+        var cartRowss = document.getElementsByClassName('space-item')
+        var totals = 0
+        for (var i = 0; i < cartRowss.length; i++) {
+            var cartRows = cartRowss[i]
+            var priceElements = cartRows.getElementsByClassName('space-item-price')[0]
+            var quantityElements = cartRows.getElementsByClassName('quantity-input')[0]
+            var prices = parseFloat(priceElements.innerText.replace('$', ''))
+            var quantitys = quantityElements.value
+            totals = totals + (prices * quantitys)
+        }
+        totals = Math.round(totals * 100) / 100
+        document.getElementsByClassName('total-price')[0].innerText =  totals + 'm³'
+       
+        if(totals !== 0){
+             document.getElementsByClassName('units')[0].style.display = 'block';
+             document.getElementsByClassName('nothing')[0].style.display = 'none';
+         }else{
+            document.getElementsByClassName('units')[0].style.display = 'none';
+             document.getElementsByClassName('nothing')[0].style.display = 'block';
+         }
+
+         
+
+        if(totals > 0 && totals < 1){
+            document.getElementsByClassName('recc')[0].innerText = 'Cube';
+        }
+        else if(totals > 1 && totals < 5.50){
+            document.getElementsByClassName('recc')[0].innerText = 'Walk-in Robe';
+        }
+        else if(totals > 5.50 && totals < 14.50){
+            document.getElementsByClassName('recc')[0].innerText = '1 Bedroom';
+        }
+        else if(totals > 14.50 && totals < 24.30){
+            document.getElementsByClassName('recc')[0].innerText = '2nd bedroom size';
+        }
+        else if(totals > 24.30){
+            document.getElementsByClassName('recc')[0].innerText = 'Half a single car garage';
+        }else{}
+    }
+
+
+   
+
+    
+
+
+
+    var removeCartItemButtons = document.getElementsByClassName('fa-times')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
+    }
+
+
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+}
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
+}
+
+function addToCartClicked(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    addItemToCart(title, price)
+    updateCartTotal()
+}
+
+function addItemToCart(title, price) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+            alert('This item is already added')
+            return
+        }
+    }
+    var cartRowContents = `
+        <div class="cart-item cart-column">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <div class="cart-price cart-column">
+        <span class="cart-price cart-column">${price}m<sup>3</sup></span>
+        </div>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <I class="fas fa-times"></i>
+        </div>`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('fa-times')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText =  total + 'm³'
+
+}
+</script>
+</body>
+</html>
